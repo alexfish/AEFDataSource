@@ -14,7 +14,20 @@ To run the example project; clone the repo, and run `pod install` then open `AEF
 
 ### AEFTableViewDataSource
 
-A data source for a UITableView
+A data source for a UITableView that supports an array of items or a multidimensional array of items for section support.
+
+```
+NSArray *items = @[@[@"Row", @"Row"], @[@"Row", @"Row"]];
+self.dataSource = [[AEFTableViewDataSource alloc] initWithItems:items 
+                                                 cellIdentifier:@"Cell" 
+                                             configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
+    cell.textLabel.text = [NSString stringWithFormat:@"%@_%i", item, indexPath.row];
+}];
+    
+self.tableView.dataSource = self.dataSource;
+```
+
+See the example application for more in depth usage examples. 
 
 ## Installation
 
