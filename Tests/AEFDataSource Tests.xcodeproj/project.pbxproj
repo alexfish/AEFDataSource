@@ -11,7 +11,7 @@
 		06CFCBB7191FBB22009A34CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CFCBB6191FBB22009A34CA /* Foundation.framework */; };
 		06CFCBB9191FBB22009A34CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CFCBB8191FBB22009A34CA /* UIKit.framework */; };
 		06CFCBBF191FBB22009A34CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06CFCBBD191FBB22009A34CA /* InfoPlist.strings */; };
-		06CFCBC1191FBB22009A34CA /* AEFDataSource_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFCBC0191FBB22009A34CA /* AEFDataSource_Tests.m */; };
+		06CFCBC7191FC253009A34CA /* AEFTableViewDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFCBC6191FC253009A34CA /* AEFTableViewDataSourceTests.m */; };
 		D87FBEB97AB44A1CB972B697 /* libPods-AEFDataSource Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDFA57A5F89462EA27CBB0C /* libPods-AEFDataSource Tests.a */; };
 /* End PBXBuildFile section */
 
@@ -22,8 +22,8 @@
 		06CFCBB8191FBB22009A34CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		06CFCBBC191FBB22009A34CA /* AEFDataSource Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AEFDataSource Tests-Info.plist"; sourceTree = "<group>"; };
 		06CFCBBE191FBB22009A34CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		06CFCBC0191FBB22009A34CA /* AEFDataSource_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEFDataSource_Tests.m; sourceTree = "<group>"; };
 		06CFCBC2191FBB22009A34CA /* AEFDataSource Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEFDataSource Tests-Prefix.pch"; sourceTree = "<group>"; };
+		06CFCBC6191FC253009A34CA /* AEFTableViewDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFTableViewDataSourceTests.m; sourceTree = "<group>"; };
 		8F1FD3AAAE374F69BAAF18E1 /* Pods-AEFDataSource Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEFDataSource Tests.xcconfig"; path = "../Pods/Pods-AEFDataSource Tests.xcconfig"; sourceTree = "<group>"; };
 		ECDFA57A5F89462EA27CBB0C /* libPods-AEFDataSource Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AEFDataSource Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,8 +75,8 @@
 		06CFCBBA191FBB22009A34CA /* AEFDataSource Tests */ = {
 			isa = PBXGroup;
 			children = (
-				06CFCBC0191FBB22009A34CA /* AEFDataSource_Tests.m */,
 				06CFCBBB191FBB22009A34CA /* Supporting Files */,
+				06CFCBC6191FC253009A34CA /* AEFTableViewDataSourceTests.m */,
 			);
 			path = "AEFDataSource Tests";
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06CFCBC1191FBB22009A34CA /* AEFDataSource_Tests.m in Sources */,
+				06CFCBC7191FC253009A34CA /* AEFTableViewDataSourceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
