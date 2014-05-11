@@ -24,7 +24,7 @@
     
     self.block = ^(id cell, id item, NSIndexPath *indexPath){};
     
-    self.dataSource = [[AEFTableViewDataSource alloc] initWithItems:@[@1]
+    self.dataSource = [[AEFTableViewDataSource alloc] initWithItems:@[@[@1],@[@1,@2]]
                                                      cellIdentifier:@""
                                                  configureCellBlock:self.block];
 }
@@ -49,8 +49,8 @@
 
 - (void)testThatTheCorrectRowsAreReturned
 {
-    NSInteger count = [self.dataSource tableView:nil numberOfRowsInSection:0];
-    XCTAssertEqual(@(count), @1, @"Incorrect row count returned");
+    NSInteger count = [self.dataSource tableView:nil numberOfRowsInSection:1];
+    XCTAssertEqual(@(count), @2, @"Incorrect row count returned");
 }
 
 
@@ -91,6 +91,42 @@
     [dataSource tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     
     XCTAssertTrue(testBOOL, @"Configure cell block was not called");
+}
+
+- (void)testThatConfigureBlockIsCalledForSections
+{
+    id tableView = [OCMockObject mockForClass:[UITableView class]];
+    id cell = [OCMockObject mockForClass:[UITableViewCell class]];
+    
+    __block BOOL testBOOL = NO;
+    
+    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithItems:@[@[@1],@[@1]] cellIdentifier:@"" configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
+        testBOOL = YES;
+    }];
+    
+    [[[tableView stub] andReturn:cell] dequeueReusableCellWithIdentifier:[OCMArg any]forIndexPath:[OCMArg any]];
+    
+    [dataSource tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    XCTAssertTrue(testBOOL, @"Configure cell block was not called");
+}
+
+- (void)testThatConfigureBlockIsNotCalledForInvalidSections
+{
+    id tableView = [OCMockObject mockForClass:[UITableView class]];
+    id cell = [OCMockObject mockForClass:[UITableViewCell class]];
+    
+    __block BOOL testBOOL = NO;
+    
+    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithItems:@[@[@1],@[@1]] cellIdentifier:@"" configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
+        testBOOL = YES;
+    }];
+    
+    [[[tableView stub] andReturn:cell] dequeueReusableCellWithIdentifier:[OCMArg any]forIndexPath:[OCMArg any]];
+    
+    [dataSource tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:10 inSection:20]];
+    
+    XCTAssertFalse(testBOOL, @"Configure cell block was not called");
 }
 
 @end
