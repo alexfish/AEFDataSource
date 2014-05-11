@@ -36,7 +36,7 @@ typedef void (^AEFTableViewCellConfigureBlock)(UITableViewCell *cell, id item, N
 @property (nonatomic, copy, readonly) NSArray *items;
 
 /**
- *  The datasource's reuse cell identified
+ *  The datasource's reuse cell identifier
  */
 @property (nonatomic, copy, readonly) NSString *cellIdentifier;
 
