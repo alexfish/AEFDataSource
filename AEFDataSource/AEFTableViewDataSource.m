@@ -28,14 +28,14 @@
 
 #pragma mark - Init
 
-- (id)initWithItems:(NSArray *)anItems
+- (id)initWithItems:(NSArray *)items
      cellIdentifier:(NSString *)cellIdentifier
  configureCellBlock:(AEFTableViewCellConfigureBlock)configureCellBlock
 {
     self = [super init];
     if (self)
     {
-        _items              = [anItems copy];
+        _items              = [items copy];
         _cellIdentifier     = [cellIdentifier copy];
         _configureCellBlock = [configureCellBlock copy];
     }
