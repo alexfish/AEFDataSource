@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06CA7207191FB1D200CA11E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CA7206191FB1D200CA11E5 /* Foundation.framework */; };
+		06CA7209191FB1D200CA11E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CA7208191FB1D200CA11E5 /* CoreGraphics.framework */; };
+		06CA720B191FB1D200CA11E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CA720A191FB1D200CA11E5 /* UIKit.framework */; };
+		06CA7211191FB1D200CA11E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06CA720F191FB1D200CA11E5 /* InfoPlist.strings */; };
+		06CA7213191FB1D200CA11E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CA7212191FB1D200CA11E5 /* main.m */; };
+		06CA7217191FB1D200CA11E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CA7216191FB1D200CA11E5 /* AppDelegate.m */; };
+		06CA721A191FB1D200CA11E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CA7218191FB1D200CA11E5 /* Main.storyboard */; };
+		06CA721D191FB1D200CA11E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CA721C191FB1D200CA11E5 /* ViewController.m */; };
+		06CA721F191FB1D200CA11E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CA721E191FB1D200CA11E5 /* Images.xcassets */; };
+		D6319A0871C7470EA1ED9FBE /* libPods-AEFDataSource Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48772F468F4F47BF8DBDBD02 /* libPods-AEFDataSource Example.a */; };
+		DFAB7A5DC520459184A9324A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 806919843D214B6EA415BC81 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06CA7203191FB1D200CA11E5 /* AEFDataSource Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AEFDataSource Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06CA7206191FB1D200CA11E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		06CA7208191FB1D200CA11E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		06CA720A191FB1D200CA11E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		06CA720E191FB1D200CA11E5 /* AEFDataSource Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AEFDataSource Example-Info.plist"; sourceTree = "<group>"; };
+		06CA7210191FB1D200CA11E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		06CA7212191FB1D200CA11E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		06CA7214191FB1D200CA11E5 /* AEFDataSource Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEFDataSource Example-Prefix.pch"; sourceTree = "<group>"; };
+		06CA7215191FB1D200CA11E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		06CA7216191FB1D200CA11E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		06CA7219191FB1D200CA11E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06CA721B191FB1D200CA11E5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		06CA721C191FB1D200CA11E5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		06CA721E191FB1D200CA11E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		06CA7225191FB1D200CA11E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		48772F468F4F47BF8DBDBD02 /* libPods-AEFDataSource Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AEFDataSource Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		806919843D214B6EA415BC81 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		923F95C0598E4F1C81D54715 /* Pods-AEFDataSource Example.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEFDataSource Example.xcconfig"; path = "../Pods/Pods-AEFDataSource Example.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06CA7200191FB1D200CA11E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CA7209191FB1D200CA11E5 /* CoreGraphics.framework in Frameworks */,
+				06CA720B191FB1D200CA11E5 /* UIKit.framework in Frameworks */,
+				06CA7207191FB1D200CA11E5 /* Foundation.framework in Frameworks */,
+				DFAB7A5DC520459184A9324A /* libPods.a in Frameworks */,
+				D6319A0871C7470EA1ED9FBE /* libPods-AEFDataSource Example.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06CA71FA191FB1D200CA11E5 = {
+			isa = PBXGroup;
+			children = (
+				06CA720C191FB1D200CA11E5 /* AEFDataSource Example */,
+				06CA7205191FB1D200CA11E5 /* Frameworks */,
+				06CA7204191FB1D200CA11E5 /* Products */,
+				923F95C0598E4F1C81D54715 /* Pods-AEFDataSource Example.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		06CA7204191FB1D200CA11E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06CA7203191FB1D200CA11E5 /* AEFDataSource Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06CA7205191FB1D200CA11E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06CA7206191FB1D200CA11E5 /* Foundation.framework */,
+				06CA7208191FB1D200CA11E5 /* CoreGraphics.framework */,
+				06CA720A191FB1D200CA11E5 /* UIKit.framework */,
+				06CA7225191FB1D200CA11E5 /* XCTest.framework */,
+				806919843D214B6EA415BC81 /* libPods.a */,
+				48772F468F4F47BF8DBDBD02 /* libPods-AEFDataSource Example.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06CA720C191FB1D200CA11E5 /* AEFDataSource Example */ = {
+			isa = PBXGroup;
+			children = (
+				06CA7215191FB1D200CA11E5 /* AppDelegate.h */,
+				06CA7216191FB1D200CA11E5 /* AppDelegate.m */,
+				06CA7218191FB1D200CA11E5 /* Main.storyboard */,
+				06CA721B191FB1D200CA11E5 /* ViewController.h */,
+				06CA721C191FB1D200CA11E5 /* ViewController.m */,
+				06CA721E191FB1D200CA11E5 /* Images.xcassets */,
+				06CA720D191FB1D200CA11E5 /* Supporting Files */,
+			);
+			path = "AEFDataSource Example";
+			sourceTree = "<group>";
+		};
+		06CA720D191FB1D200CA11E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06CA720E191FB1D200CA11E5 /* AEFDataSource Example-Info.plist */,
+				06CA720F191FB1D200CA11E5 /* InfoPlist.strings */,
+				06CA7212191FB1D200CA11E5 /* main.m */,
+				06CA7214191FB1D200CA11E5 /* AEFDataSource Example-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06CA7202191FB1D200CA11E5 /* AEFDataSource Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06CA7235191FB1D200CA11E5 /* Build configuration list for PBXNativeTarget "AEFDataSource Example" */;
+			buildPhases = (
+				50C25DEEDE60425196B63709 /* Check Pods Manifest.lock */,
+				06CA71FF191FB1D200CA11E5 /* Sources */,
+				06CA7200191FB1D200CA11E5 /* Frameworks */,
+				06CA7201191FB1D200CA11E5 /* Resources */,
+				00F480E5D29248C58173D340 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AEFDataSource Example";
+			productName = "AEFDataSource Example";
+			productReference = 06CA7203191FB1D200CA11E5 /* AEFDataSource Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06CA71FB191FB1D200CA11E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = alexefish;
+			};
+			buildConfigurationList = 06CA71FE191FB1D200CA11E5 /* Build configuration list for PBXProject "AEFDataSource Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06CA71FA191FB1D200CA11E5;
+			productRefGroup = 06CA7204191FB1D200CA11E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06CA7202191FB1D200CA11E5 /* AEFDataSource Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06CA7201191FB1D200CA11E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CA721F191FB1D200CA11E5 /* Images.xcassets in Resources */,
+				06CA7211191FB1D200CA11E5 /* InfoPlist.strings in Resources */,
+				06CA721A191FB1D200CA11E5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00F480E5D29248C58173D340 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-AEFDataSource Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50C25DEEDE60425196B63709 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06CA71FF191FB1D200CA11E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CA721D191FB1D200CA11E5 /* ViewController.m in Sources */,
+				06CA7217191FB1D200CA11E5 /* AppDelegate.m in Sources */,
+				06CA7213191FB1D200CA11E5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		06CA720F191FB1D200CA11E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06CA7210191FB1D200CA11E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		06CA7218191FB1D200CA11E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06CA7219191FB1D200CA11E5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		06CA7233191FB1D200CA11E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		06CA7234191FB1D200CA11E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06CA7236191FB1D200CA11E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 923F95C0598E4F1C81D54715 /* Pods-AEFDataSource Example.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AEFDataSource Example/AEFDataSource Example-Prefix.pch";
+				INFOPLIST_FILE = "AEFDataSource Example/AEFDataSource Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		06CA7237191FB1D200CA11E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 923F95C0598E4F1C81D54715 /* Pods-AEFDataSource Example.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AEFDataSource Example/AEFDataSource Example-Prefix.pch";
+				INFOPLIST_FILE = "AEFDataSource Example/AEFDataSource Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06CA71FE191FB1D200CA11E5 /* Build configuration list for PBXProject "AEFDataSource Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06CA7233191FB1D200CA11E5 /* Debug */,
+				06CA7234191FB1D200CA11E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06CA7235191FB1D200CA11E5 /* Build configuration list for PBXNativeTarget "AEFDataSource Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06CA7236191FB1D200CA11E5 /* Debug */,
+				06CA7237191FB1D200CA11E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06CA71FB191FB1D200CA11E5 /* Project object */;
+}

@@ -1,0 +1,5 @@
+env:
+  global:
+    - LANG=en_US.UTF-8
+xcode_workspace: AEFDataSource.xcworkspace
+xcode_scheme: AEFDataSourceTests
