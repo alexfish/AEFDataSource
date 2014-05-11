@@ -1,5 +1,6 @@
 # AEFDataSource
 
+[![Build Status](https://travis-ci.org/alexfish/AEFDataSource.svg?branch=master)](https://travis-ci.org/alexfish/AEFDataSource)
 [![Version](http://cocoapod-badges.herokuapp.com/v/AEFDataSource/badge.png)](http://cocoadocs.org/docsets/AEFDataSource)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/AEFDataSource/badge.png)](http://cocoadocs.org/docsets/AEFDataSource)
 
