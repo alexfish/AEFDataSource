@@ -44,11 +44,38 @@
 }
 
 
-#pragma mark UITableViewDataSource
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    NSInteger count = 0;
+    
+    if ([self.items[0] isKindOfClass:[NSArray class]])
+    {
+        count = self.items.count;
+    }
+    else
+    {
+        count = 1;
+    }
+    
+    return count;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.items.count;
+    NSInteger count = 0;
+    
+    if ([self.items[section] isKindOfClass:[NSArray class]])
+    {
+        count = [self.items[section] count];
+    }
+    else
+    {
+        count = self.items.count;
+    }
+    
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -56,13 +83,37 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier
                                                             forIndexPath:indexPath];
     
-    if (indexPath.row < self.items.count)
+    id item = [self itemAtIndexPath:indexPath];
+    
+    if (item)
     {
-        id item = self.items[indexPath.row];
         self.configureCellBlock(cell, item, indexPath);
     }
     
     return cell;
+}
+
+
+#pragma mark - Accessors
+
+- (id)itemAtIndexPath:(NSIndexPath *)indexPath
+{
+    id item = nil;
+    
+    if (indexPath.section < self.items.count
+        && [self.items[indexPath.section] isKindOfClass:[NSArray class]])
+    {
+        if (indexPath.row < [self.items[indexPath.section] count])
+        {
+            item = self.items[indexPath.section][indexPath.row];
+        }
+    }
+    else if (indexPath.row < self.items.count)
+    {
+        item = self.items[indexPath.row];
+    }
+    
+    return item;
 }
 
 
