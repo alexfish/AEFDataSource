@@ -33,7 +33,7 @@
 {
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
-    NSArray *items = @[@"Row", @"Row", @"Row", @"Row"];
+    NSArray *items = @[@[@"Row", @"Row"], @[@"Row", @"Row"], @[@"Row", @"Row"]];
     self.dataSource = [[AEFTableViewDataSource alloc] initWithItems:items cellIdentifier:@"Cell" configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
         cell.textLabel.text = [NSString stringWithFormat:@"%@-%i", item, indexPath.row];
     }];
@@ -41,5 +41,17 @@
     self.tableView.dataSource = self.dataSource;
 }
 
+
+#pragma mark - UITableViewDelegate
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.backgroundColor = [UIColor blackColor];
+    label.textColor = [UIColor whiteColor];
+    label.text = [NSString stringWithFormat:@"Section-%i", section];
+    
+    return label;
+}
 
 @end
