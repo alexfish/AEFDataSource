@@ -1,14 +1,20 @@
 # AEFDataSource
 
+Reusable data source models for your iOS application, inspired by the [lighter view controllers](http://www.objc.io/issue-1/lighter-view-controllers.html) movement. 
+
 [![Build Status](https://travis-ci.org/alexfish/AEFDataSource.svg?branch=master)](https://travis-ci.org/alexfish/AEFDataSource)
 [![Version](http://cocoapod-badges.herokuapp.com/v/AEFDataSource/badge.png)](http://cocoadocs.org/docsets/AEFDataSource)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/AEFDataSource/badge.png)](http://cocoadocs.org/docsets/AEFDataSource)
 
 ## Usage
 
-To run the example project; clone the repo, and run `pod install` from the Example directory first.
+To run the example project; clone the repo, and run `pod install` then open `AEFDataSource.xcworkspace`.
 
-## Requirements
+## Data sources
+
+### AEFTableViewDataSource
+
+A data source for a UITableView
 
 ## Installation
 
