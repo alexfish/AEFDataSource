@@ -6,7 +6,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = "AEFDataSource"
-  s.version          = "0.2.0"
+  s.version          = "0.3.0"
   s.summary          = "Reusable data source models for your iOS application"
   s.homepage         = "http://github.com/AEFDataSource"
   s.license          = 'MIT'
