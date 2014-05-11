@@ -16,7 +16,7 @@
  *  @param item The item that the cell requires configuration with
  *
  */
-typedef void (^AEFTableViewCellConfigureBlock)(id cell, id item, NSIndexPath *indexPath);
+typedef void (^AEFTableViewCellConfigureBlock)(UITableViewCell *cell, id item, NSIndexPath *indexPath);
 
 
 /**

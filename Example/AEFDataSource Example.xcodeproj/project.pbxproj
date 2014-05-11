@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06199DF5191FD37500942FE7 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06199DF4191FD37500942FE7 /* MenuTableViewController.m */; };
 		06CA7207191FB1D200CA11E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CA7206191FB1D200CA11E5 /* Foundation.framework */; };
 		06CA7209191FB1D200CA11E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CA7208191FB1D200CA11E5 /* CoreGraphics.framework */; };
 		06CA720B191FB1D200CA11E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CA720A191FB1D200CA11E5 /* UIKit.framework */; };
@@ -14,13 +15,14 @@
 		06CA7213191FB1D200CA11E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CA7212191FB1D200CA11E5 /* main.m */; };
 		06CA7217191FB1D200CA11E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CA7216191FB1D200CA11E5 /* AppDelegate.m */; };
 		06CA721A191FB1D200CA11E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CA7218191FB1D200CA11E5 /* Main.storyboard */; };
-		06CA721D191FB1D200CA11E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CA721C191FB1D200CA11E5 /* ViewController.m */; };
 		06CA721F191FB1D200CA11E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CA721E191FB1D200CA11E5 /* Images.xcassets */; };
 		D6319A0871C7470EA1ED9FBE /* libPods-AEFDataSource Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48772F468F4F47BF8DBDBD02 /* libPods-AEFDataSource Example.a */; };
 		DFAB7A5DC520459184A9324A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 806919843D214B6EA415BC81 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06199DF3191FD37500942FE7 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		06199DF4191FD37500942FE7 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		06CA7203191FB1D200CA11E5 /* AEFDataSource Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AEFDataSource Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CA7206191FB1D200CA11E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		06CA7208191FB1D200CA11E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -32,8 +34,6 @@
 		06CA7215191FB1D200CA11E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		06CA7216191FB1D200CA11E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		06CA7219191FB1D200CA11E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		06CA721B191FB1D200CA11E5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		06CA721C191FB1D200CA11E5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		06CA721E191FB1D200CA11E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06CA7225191FB1D200CA11E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		48772F468F4F47BF8DBDBD02 /* libPods-AEFDataSource Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AEFDataSource Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,9 +93,9 @@
 			children = (
 				06CA7215191FB1D200CA11E5 /* AppDelegate.h */,
 				06CA7216191FB1D200CA11E5 /* AppDelegate.m */,
+				06199DF3191FD37500942FE7 /* MenuTableViewController.h */,
+				06199DF4191FD37500942FE7 /* MenuTableViewController.m */,
 				06CA7218191FB1D200CA11E5 /* Main.storyboard */,
-				06CA721B191FB1D200CA11E5 /* ViewController.h */,
-				06CA721C191FB1D200CA11E5 /* ViewController.m */,
 				06CA721E191FB1D200CA11E5 /* Images.xcassets */,
 				06CA720D191FB1D200CA11E5 /* Supporting Files */,
 			);
@@ -213,8 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06CA721D191FB1D200CA11E5 /* ViewController.m in Sources */,
 				06CA7217191FB1D200CA11E5 /* AppDelegate.m in Sources */,
+				06199DF5191FD37500942FE7 /* MenuTableViewController.m in Sources */,
 				06CA7213191FB1D200CA11E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
