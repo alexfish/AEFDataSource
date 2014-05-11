@@ -4,6 +4,12 @@
    <Group
       location = "group:AEFDataSource"
       name = "AEFDataSource">
+      <FileRef
+         location = "group:AEFTableViewDataSource.h">
+      </FileRef>
+      <FileRef
+         location = "group:AEFTableViewDataSource.m">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Example/AEFDataSource Example.xcodeproj">
