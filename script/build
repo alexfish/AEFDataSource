@@ -1,0 +1,13 @@
+#!/bin/bash
+main ()
+{
+  echo "*** Running Tests ***"
+  run_tests
+}
+
+run_tests ()
+{
+  xctool -workspace AEFDataSource.xcworkspace -scheme AEFDataSource Tests -sdk iphonesimulator build test
+}
+
+main

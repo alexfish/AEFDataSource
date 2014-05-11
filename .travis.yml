@@ -1,5 +1,15 @@
 env:
   global:
     - LANG=en_US.UTF-8
-xcode_workspace: AEFDataSource.xcworkspace
-xcode_scheme: AEFDataSourceTests
+language: objective-c
+rvm:
+  - 2.0.0
+before_install:
+  - brew update
+  - brew upgrade xctool
+  - bundle install
+install:
+  - bundle exec pod update
+  - bundle exec pod install
+script:
+  bash script/build
