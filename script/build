@@ -7,7 +7,7 @@ main ()
 
 run_tests ()
 {
-  xctool -workspace AEFDataSource.xcworkspace -scheme AEFDataSource Tests -sdk iphonesimulator build test
+  xctool -workspace AEFDataSource.xcworkspace -scheme AEFDataSource\ Tests -sdk iphonesimulator test
 }
 
 main
