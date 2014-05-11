@@ -17,4 +17,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'AEFDataSource'
   s.resources = 'Assets/*.png'
+  s.platform = :ios
 end
