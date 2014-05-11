@@ -1,0 +1,7 @@
+pod "AEFDataSource", :path => "../"
+
+target "Demo" do
+end
+
+target "DemoTests" do
+end
