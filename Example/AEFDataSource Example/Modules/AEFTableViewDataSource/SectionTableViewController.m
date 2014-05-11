@@ -1,21 +1,23 @@
 //
-//  MenuTableViewController.m
+//  SectionTableViewController.m
 //  AEFDataSource Example
 //
 //  Created by Alex Fish on 11/05/2014.
 //  Copyright (c) 2014 alexefish. All rights reserved.
 //
 
-#import "MenuTableViewController.h"
+#import "SectionTableViewController.h"
 
 // DataSource
 #import "AEFTableViewDataSource.h"
 
-@interface MenuTableViewController ()
+
+@interface SectionTableViewController ()
 @property (nonatomic, strong) AEFTableViewDataSource *dataSource;
 @end
 
-@implementation MenuTableViewController
+
+@implementation SectionTableViewController
 
 
 #pragma mark - Init
@@ -33,23 +35,20 @@
 {
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
-    NSArray *items = @[@[@"Row", @"Row"], @[@"Row", @"Row"], @[@"Row", @"Row"]];
+    NSArray *items = @[@[@"Row"], @[@"Row"], @[@"Row"], @[@"Row"], @[@"Row"], @[@"Row"], @[@"Row"]];
     self.dataSource = [[AEFTableViewDataSource alloc] initWithItems:items cellIdentifier:@"Cell" configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@-%i", item, indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@_%i", item, indexPath.row];
     }];
     
     self.tableView.dataSource = self.dataSource;
 }
-
-
-#pragma mark - UITableViewDelegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     label.backgroundColor = [UIColor blackColor];
     label.textColor = [UIColor whiteColor];
-    label.text = [NSString stringWithFormat:@"Section-%i", section];
+    label.text = [NSString stringWithFormat:@"Section_%i", section];
     
     return label;
 }
