@@ -16,6 +16,15 @@
       <FileRef
          location = "group:AEFBaseModel.m">
       </FileRef>
+      <FileRef
+         location = "group:AEFBaseCollection.h">
+      </FileRef>
+      <FileRef
+         location = "group:AEFBaseCollection.m">
+      </FileRef>
+      <FileRef
+         location = "group:AEFBaseCollection_Private.h">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Example/AEFDataSource Example.xcodeproj">
