@@ -15,6 +15,5 @@ end
 
 target "AEFDataSource Example" do
     xcodeproj 'Example/AEFDataSource Example.xcodeproj'
-    pod "AEFDataSource", :path => "AEFDataSource.podspec"
     install_pod
 end
