@@ -29,11 +29,10 @@ typedef void (^AEFTableViewCellConfigureBlock)(UITableViewCell *cell, id item, N
  */
 @interface AEFTableViewDataSource : NSObject <UITableViewDataSource>
 
-
 /**
  *  The datasource's items
  */
-@property (nonatomic, copy, readonly) NSArray *items;
+@property (nonatomic, copy, readonly) NSArray *items __attribute__((deprecated));
 
 /**
  *  The datasource's reuse cell identifier
@@ -57,7 +56,7 @@ typedef void (^AEFTableViewCellConfigureBlock)(UITableViewCell *cell, id item, N
  */
 - (id)initWithItems:(NSArray *)items
      cellIdentifier:(NSString *)cellIdentifier
- configureCellBlock:(AEFTableViewCellConfigureBlock)configureCellBlock;
+ configureCellBlock:(AEFTableViewCellConfigureBlock)configureCellBlock __attribute__((deprecated));;
 
 /**
  *  Add items to the data source's items array, after adding items you
@@ -66,7 +65,7 @@ typedef void (^AEFTableViewCellConfigureBlock)(UITableViewCell *cell, id item, N
  *
  *  @param items An array of items to add
  */
-- (void)addItems:(NSArray *)items;
+- (void)addItems:(NSArray *)items __attribute__((deprecated));
 
 /**
  *  Remove items from the data source's items array, after removing items
@@ -75,6 +74,6 @@ typedef void (^AEFTableViewCellConfigureBlock)(UITableViewCell *cell, id item, N
  *
  *  @param items An array of items to remove
  */
-- (void)removeItems:(NSArray *)items;
+- (void)removeItems:(NSArray *)items __attribute__((deprecated));
 
 @end
