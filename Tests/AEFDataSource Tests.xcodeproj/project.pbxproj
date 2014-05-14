@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0687CFAE1923EAE00018CDDC /* AEFTableCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0687CFAD1923EAE00018CDDC /* AEFTableCollectionTests.m */; };
 		06CFCBB5191FBB22009A34CA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CFCBB4191FBB22009A34CA /* XCTest.framework */; };
 		06CFCBB7191FBB22009A34CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CFCBB6191FBB22009A34CA /* Foundation.framework */; };
 		06CFCBB9191FBB22009A34CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CFCBB8191FBB22009A34CA /* UIKit.framework */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0687CFAD1923EAE00018CDDC /* AEFTableCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFTableCollectionTests.m; sourceTree = "<group>"; };
 		06CFCBB1191FBB22009A34CA /* AEFDataSource Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AEFDataSource Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CFCBB4191FBB22009A34CA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		06CFCBB6191FBB22009A34CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -80,6 +82,7 @@
 				06CFCBBB191FBB22009A34CA /* Supporting Files */,
 				06CFCBC6191FC253009A34CA /* AEFTableViewDataSourceTests.m */,
 				06D051111922C4AE0098A28B /* AEFBaseCollectionTests.m */,
+				0687CFAD1923EAE00018CDDC /* AEFTableCollectionTests.m */,
 			);
 			path = "AEFDataSource Tests";
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0687CFAE1923EAE00018CDDC /* AEFTableCollectionTests.m in Sources */,
 				06CFCBC7191FC253009A34CA /* AEFTableViewDataSourceTests.m in Sources */,
 				06D051121922C4AE0098A28B /* AEFBaseCollectionTests.m in Sources */,
 			);

@@ -17,7 +17,7 @@
 
 #pragma mark - Init
 
-- (id)initWithObjects:(NSArray *)objects
+- (instancetype)initWithObjects:(NSArray *)objects
 {
     self = [super init];
     if (self)
