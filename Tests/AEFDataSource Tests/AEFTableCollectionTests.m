@@ -38,4 +38,10 @@
     XCTAssertNotNil(self.collection.cellIdentifier, @"Cell identifier was not set");
 }
 
+- (void)testThatCellIdentifierIsCopied
+{
+    AEFTableCollection *collection = [self.collection copy];
+    XCTAssertNotNil(collection.cellIdentifier, @"Cell identifier was not copied");
+}
+
 @end

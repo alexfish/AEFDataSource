@@ -12,7 +12,7 @@
  *  An abstract collection class, a collection represents
  *  a mutable ordered collection of models that can be held in a data source.
  */
-@interface AEFBaseCollection : AEFBaseModel
+@interface AEFBaseCollection : AEFBaseModel <NSCopying>
 
 /**
  *  Return a new collection instance containing an array of objects.

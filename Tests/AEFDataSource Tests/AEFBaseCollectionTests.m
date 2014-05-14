@@ -69,4 +69,10 @@
     XCTAssertEqual(@(self.collection.objects.count), @(count - 1), @"Objects were not added");
 }
 
+- (void)testThatObjectsAreCopied
+{
+    AEFBaseCollection *collection = [self.collection copy];
+    XCTAssertNotNil(collection.objects, @"Objects were not copied");
+}
+
 @end

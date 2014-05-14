@@ -8,6 +8,18 @@
 
 #import "AEFTableCollection.h"
 
+
+/**
+ *  Private Class Extension
+ */
+@interface AEFTableCollection ()
+/**
+ *  Overwritten readonly properties
+ */
+@property (nonatomic, copy, readwrite) NSString *cellIdentifier;
+@end
+
+
 @implementation AEFTableCollection
 
 
@@ -23,6 +35,17 @@
     }
     
     return self;
+}
+
+
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    AEFTableCollection *collection = [super copyWithZone:zone];
+    collection.cellIdentifier = [self.cellIdentifier copy];
+    
+    return collection;
 }
 
 @end

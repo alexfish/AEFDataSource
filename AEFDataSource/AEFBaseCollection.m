@@ -83,4 +83,15 @@
     self.objects = [NSArray arrayWithArray:mutableObjects];
 }
 
+
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    AEFBaseCollection *collection = [[[self class] allocWithZone:zone] init];
+    collection.objects = [self.objects copy];
+    
+    return collection;
+}
+
 @end
