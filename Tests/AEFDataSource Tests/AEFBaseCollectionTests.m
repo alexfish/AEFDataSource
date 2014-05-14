@@ -37,16 +37,16 @@
 
 - (void)testThatAnObjectIsAdded
 {
-    NSInteger count = self.collection.objects.count;
+    NSInteger count = self.collection.count;
     [self.collection addObject:@2];
     
-    XCTAssertEqual(@(self.collection.objects.count), @(count + 1), @"Objects were not added");
+    XCTAssertEqual(@(self.collection.count), @(count + 1), @"Objects were not added");
 }
 
 - (void)testThatAnObjectIsRemoved
 {
     [self.collection addObject:@2];
-    NSInteger count = self.collection.objects.count;
+    NSInteger count = self.collection.count;
     [self.collection removeObject:@2];
     
     XCTAssertEqual(@(self.collection.objects.count), @(count - 1), @"Objects were not added");
@@ -54,16 +54,16 @@
 
 - (void)testThatObjectsAreAdded
 {
-    NSInteger count = self.collection.objects.count;
+    NSInteger count = self.collection.count;
     [self.collection addObjects:@[@2]];
     
-    XCTAssertEqual(@(self.collection.objects.count), @(count + 1), @"Objects were not added");
+    XCTAssertEqual(@(self.collection.count), @(count + 1), @"Objects were not added");
 }
 
 - (void)testThatObjectsAreRemoved
 {
     [self.collection addObject:@2];
-    NSInteger count = self.collection.objects.count;
+    NSInteger count = self.collection.count;
     [self.collection removeObjects:@[@2]];
     
     XCTAssertEqual(@(self.collection.objects.count), @(count - 1), @"Objects were not added");

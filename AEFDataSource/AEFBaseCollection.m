@@ -52,6 +52,19 @@
 }
 
 
+#pragma mark - Getters
+
+- (NSInteger)count
+{
+    return self.objects.count;
+}
+
+- (id)objectAtIndexedSubscript:(NSUInteger)idx
+{
+    return self.objects[idx];
+}
+
+
 #pragma mark - Mutation (Private)
 
 - (void)AEF_addObjects:(NSArray *)objects

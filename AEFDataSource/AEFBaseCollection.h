@@ -51,4 +51,20 @@
  */
 - (void)removeObjects:(NSArray *)objects;
 
+/**
+ *  Return the number of objects in the collection
+ *
+ *  @return An NSInteger count of the number of object in the collection
+ */
+- (NSInteger)count;
+
+/**
+ *  Returns the object at the specified index of the collection.
+ *
+ *  @param idx The object located at index.
+ *
+ *  @return If index is beyond the end of the collection (that is, if index is greater than or equal to the value returned by count), an NSRangeException is raised.
+ */
+- (id)objectAtIndexedSubscript:(NSUInteger)idx;
+
 @end
