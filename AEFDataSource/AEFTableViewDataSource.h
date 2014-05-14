@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+@class AEFTableCollection;
+
+
 /**
  *  The configure cell callback called on `cellForRowAtIndexPath` to configure the
  *  cell to display an item
@@ -30,50 +34,25 @@ typedef void (^AEFTableViewCellConfigureBlock)(UITableViewCell *cell, id item, N
 @interface AEFTableViewDataSource : NSObject <UITableViewDataSource>
 
 /**
- *  The datasource's items
+ *  The data sources object collection, the collection contains data managed 
+ *  by the table data source
  */
-@property (nonatomic, copy, readonly) NSArray *items __attribute__((deprecated));
-
-/**
- *  The datasource's reuse cell identifier
- */
-@property (nonatomic, copy, readonly) NSString *cellIdentifier;
+@property (nonatomic, copy, readonly) AEFTableCollection *collection;
 
 /**
  *  The configure cell block
  */
 @property (nonatomic, copy, readonly) AEFTableViewCellConfigureBlock configureCellBlock;
 
-
 /**
- *  Init a new array dataSource
+ *  Return a new data source instance with a collection and configure block
  *
- *  @param items               An NSArray of items to provide to the UITableViewDataSource
- *  @param cellIdentifier      A unique cell reuse cell identifier
- *  @param configureCellBlock  A block called when a cell requires configuration inside `cellForRowAtIndexPath:`
+ *  @param collection         A collection of objects for the datasource to manage
+ *  @param configureCellBlock A block called when a cell requires configuration inside `cellForRowAtIndexPath:`
  *
- *  @return A new array datasource instance
+ *  @return A new table view data source instance with a collection and configure block
  */
-- (id)initWithItems:(NSArray *)items
-     cellIdentifier:(NSString *)cellIdentifier
- configureCellBlock:(AEFTableViewCellConfigureBlock)configureCellBlock __attribute__((deprecated));;
-
-/**
- *  Add items to the data source's items array, after adding items you
- *  should call reloadData on your view controller's data source to see
- *  the new items
- *
- *  @param items An array of items to add
- */
-- (void)addItems:(NSArray *)items __attribute__((deprecated));
-
-/**
- *  Remove items from the data source's items array, after removing items
- *  you should call reloadData on your view controller's data source to see
- *  the items removed
- *
- *  @param items An array of items to remove
- */
-- (void)removeItems:(NSArray *)items __attribute__((deprecated));
+- (id)initWithCollection:(AEFTableCollection *)collection
+      configureCellBlock:(AEFTableViewCellConfigureBlock)configureCellBlock;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "AEFTableViewDataSource.h"
-
+#import "AEFTableCollection.h"
 
 @interface AEFTableViewDataSourceTests : XCTestCase
 @property (nonatomic, strong) AEFTableViewDataSource *dataSource;
@@ -18,28 +18,28 @@
 
 @implementation AEFTableViewDataSourceTests
 
+
+#pragma mark - Setup
+
 - (void)setUp
 {
     [super setUp];
     
     self.block = ^(id cell, id item, NSIndexPath *indexPath){};
-    
-    self.dataSource = [[AEFTableViewDataSource alloc] initWithItems:@[@[@1],@[@1,@2]]
-                                                     cellIdentifier:@""
-                                                 configureCellBlock:self.block];
+    self.dataSource = [[AEFTableViewDataSource alloc] initWithCollection:self.collection configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {}];
+}
+
+- (AEFTableCollection *)collection
+{
+    return [[AEFTableCollection alloc] initWithObjects:@[@2]];
 }
 
 
 #pragma mark - Init
 
-- (void)testThatItemsAreSet
+- (void)testThatCollectionIsSet
 {
-    XCTAssertNotNil(self.dataSource.items, @"Items were not set");
-}
-
-- (void)testThatCellIdentifierIsSet
-{
-    XCTAssertNotNil(self.dataSource.cellIdentifier, @"Cell Identifier was not set");
+    XCTAssertNotNil(self.dataSource.collection, @"Items were not set");
 }
 
 - (void)testThatBlockIsSet
@@ -49,27 +49,8 @@
 
 - (void)testThatTheCorrectRowsAreReturned
 {
-    NSInteger count = [self.dataSource tableView:nil numberOfRowsInSection:1];
-    XCTAssertEqual(@(count), @2, @"Incorrect row count returned");
-}
-
-
-#pragma mark - Mutation
-
-- (void)testThatItemsAreAdded
-{
-    NSInteger count = self.dataSource.items.count;
-    [self.dataSource addItems:@[@2]];
-    XCTAssertEqual(@(self.dataSource.items.count), @(count + 1), @"Items were not added");
-}
-
-- (void)testThatItemsAreRemoved
-{
-    [self.dataSource addItems:@[@4]];
-    NSInteger count = self.dataSource.items.count;
-    [self.dataSource removeItems:@[@4]];
-    
-    XCTAssertEqual(@(self.dataSource.items.count), @(count - 1), @"Items were not removed");
+    NSInteger count = [self.dataSource tableView:nil numberOfRowsInSection:0];
+    XCTAssertEqual(@(count), @1, @"Incorrect row count returned");
 }
 
 
@@ -82,7 +63,7 @@
     
     __block BOOL testBOOL = NO;
     
-    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithItems:@[@1] cellIdentifier:@"" configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
+    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithCollection:self.collection configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
        testBOOL = YES;
     }];
     
@@ -100,7 +81,7 @@
     
     __block BOOL testBOOL = NO;
     
-    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithItems:@[@[@1],@[@1]] cellIdentifier:@"" configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
+    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithCollection:self.collection configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
         testBOOL = YES;
     }];
     
@@ -118,7 +99,7 @@
     
     __block BOOL testBOOL = NO;
     
-    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithItems:@[@[@1],@[@1]] cellIdentifier:@"" configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
+    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithCollection:self.collection configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
         testBOOL = YES;
     }];
     

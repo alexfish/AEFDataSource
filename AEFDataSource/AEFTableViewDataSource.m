@@ -8,6 +8,9 @@
 
 #import "AEFTableViewDataSource.h"
 
+// Models
+#import "AEFTableCollection.h"
+
 
 /**
  *  Private class extension
@@ -16,8 +19,7 @@
 /**
  *  Overwritten readonly properties
  */
-@property (nonatomic, copy, readwrite) NSArray *items;
-@property (nonatomic, copy, readwrite) NSString *cellIdentifier;
+@property (nonatomic, copy, readwrite) AEFTableCollection *collection;
 @property (nonatomic, copy, readwrite) AEFTableViewCellConfigureBlock configureCellBlock;
 @end
 
@@ -28,15 +30,13 @@
 
 #pragma mark - Init
 
-- (id)initWithItems:(NSArray *)items
-     cellIdentifier:(NSString *)cellIdentifier
- configureCellBlock:(AEFTableViewCellConfigureBlock)configureCellBlock
+- (id)initWithCollection:(AEFTableCollection *)collection
+      configureCellBlock:(AEFTableViewCellConfigureBlock)configureCellBlock
 {
     self = [super init];
     if (self)
     {
-        _items              = [items copy];
-        _cellIdentifier     = [cellIdentifier copy];
+        _collection         = [collection copy];
         _configureCellBlock = [configureCellBlock copy];
     }
     
@@ -48,39 +48,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSInteger count = 0;
-    
-    if ([self.items[0] isKindOfClass:[NSArray class]])
-    {
-        count = self.items.count;
-    }
-    else
-    {
-        count = 1;
-    }
-    
-    return count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger count = 0;
-    
-    if ([self.items[section] isKindOfClass:[NSArray class]])
-    {
-        count = [self.items[section] count];
-    }
-    else
-    {
-        count = self.items.count;
-    }
-    
-    return count;
+    return self.collection.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.collection.cellIdentifier
                                                             forIndexPath:indexPath];
     
     id item = [self itemAtIndexPath:indexPath];
@@ -99,42 +77,13 @@
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath
 {
     id item = nil;
-    
-    if (indexPath.section < self.items.count
-        && [self.items[indexPath.section] isKindOfClass:[NSArray class]])
+
+    if (indexPath.row < self.collection.count)
     {
-        if (indexPath.row < [self.items[indexPath.section] count])
-        {
-            item = self.items[indexPath.section][indexPath.row];
-        }
-    }
-    else if (indexPath.row < self.items.count)
-    {
-        item = self.items[indexPath.row];
+        item = self.collection[indexPath.row];
     }
     
     return item;
-}
-
-
-#pragma mark - Mutation
-
-- (void)addItems:(NSArray *)items
-{
-    NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:self.items];
-    
-    [mutableArray addObjectsFromArray:items];
-    
-    self.items = [NSArray arrayWithArray:mutableArray];
-}
-
-- (void)removeItems:(NSArray *)items
-{
-    NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:self.items];
-    
-    [mutableArray removeObjectsInArray:items];
-    
-    self.items = [NSArray arrayWithArray:mutableArray];
 }
 
 
