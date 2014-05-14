@@ -10,8 +10,10 @@
 
 /**
  *  A collection model for holding objects to display within 
- *  a UITableView data source. The table collection holds batches
- *  of objects with each batch representing a table view section.
+ *  a UITableView data source. Table collections hold a single
+ *  cell identifier and therefore are designed for use with simple
+ *  table data source implementations that have one section and a single
+ *  cell identifier.
  */
 @interface AEFTableCollection : AEFBaseCollection
 
