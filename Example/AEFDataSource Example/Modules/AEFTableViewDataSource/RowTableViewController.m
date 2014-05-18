@@ -10,6 +10,7 @@
 
 // DataSource
 #import "AEFTableViewDataSource.h"
+#import "AEFTableCollection.h"
 
 
 @interface RowTableViewController ()
@@ -35,8 +36,10 @@
 {
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
-    NSArray *items = @[@"Row", @"Row", @"Row", @"Row", @"Row", @"Row"];
-    self.dataSource = [[AEFTableViewDataSource alloc] initWithItems:items cellIdentifier:@"Cell" configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
+    AEFTableCollection *collection = [[AEFTableCollection alloc] initWithObjects:@[@"Row", @"Row", @"Row"]
+                                                                  cellIdentifier:@"Cell"];
+
+    self.dataSource = [[AEFTableViewDataSource alloc] initWithCollection:collection configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
         cell.textLabel.text = [NSString stringWithFormat:@"%@_%i", item, indexPath.row];
     }];
     

@@ -10,6 +10,7 @@
 
 // DataSource
 #import "AEFTableViewDataSource.h"
+#import "AEFTableCollection.h"
 
 @interface MenuTableViewController ()
 @property (nonatomic, strong) AEFTableViewDataSource *dataSource;
@@ -34,7 +35,8 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
     NSArray *items = @[@"Rows", @"Rows & Sections"];
-    self.dataSource = [[AEFTableViewDataSource alloc] initWithItems:items cellIdentifier:@"Cell" configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
+    AEFTableCollection *collection = [[AEFTableCollection alloc] initWithObjects:items cellIdentifier:@"Cell"];
+    self.dataSource = [[AEFTableViewDataSource alloc] initWithCollection:collection configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
         cell.textLabel.text = item;
     }];
     
