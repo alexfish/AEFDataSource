@@ -31,6 +31,12 @@
       <FileRef
          location = "group:AEFTableCollection.m">
       </FileRef>
+      <FileRef
+         location = "group:AEFTableSectionCollection.h">
+      </FileRef>
+      <FileRef
+         location = "group:AEFTableSectionCollection.m">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Example/AEFDataSource Example.xcodeproj">

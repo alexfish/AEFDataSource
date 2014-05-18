@@ -64,7 +64,7 @@
     return self.objects[idx];
 }
 
-- (id)objectAtIndex:(NSInteger)index
+- (id)objectAtIndex:(NSUInteger)index
 {
     return self.objects[index];
 }
