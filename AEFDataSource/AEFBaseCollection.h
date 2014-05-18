@@ -67,4 +67,13 @@
  */
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
 
+/**
+ *  Returns an object at a specified index of the collection
+ *
+ *  @param index The object located at index.
+ *
+ *  @return If index is beyond the end of the collection (that is, if index is greater than or equal to the value returned by count), an NSRangeException is raised.
+ */
+- (id)objectAtIndex:(NSInteger)index;
+
 @end

@@ -64,6 +64,11 @@
     return self.objects[idx];
 }
 
+- (id)objectAtIndex:(NSInteger)index
+{
+    return self.objects[index];
+}
+
 
 #pragma mark - Mutation (Private)
 

@@ -33,6 +33,19 @@
 }
 
 
+#pragma mark - Getters
+
+- (void)testThatObjectsAreReturned
+{
+    XCTAssertNotNil([self.collection objectAtIndex:0], @"An object was not returned");
+}
+
+- (void)testThatObjectsAreReturnedWithSubscripting
+{
+    XCTAssertNotNil(self.collection[0], @"An object was not returned");
+}
+
+
 #pragma mark - Mutation
 
 - (void)testThatAnObjectIsAdded
