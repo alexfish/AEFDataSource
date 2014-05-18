@@ -17,13 +17,13 @@
 @interface AEFTableSectionCollection : AEFTableCollection
 
 /**
- *  Returns an object at a specified index in a specified section
+ *  Return an object at a specified indexPath of the collection
  *
- *  @param index   The index the object is located at in the section
- *  @param section The section the object is located at in the collection
+ *  @param indexPath An indexPath within the bounds of the collection
  *
- *  @return If index or section is beyond the range of the collection than an exception is raised
+ *  @return An object at the specified indexPath, if the indexPath is beyond the bounds
+ *          of the collection than an exception is raised.
  */
-- (id)objectAtIndex:(NSUInteger)index inSection:(NSUInteger)section;
+- (id)objectAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

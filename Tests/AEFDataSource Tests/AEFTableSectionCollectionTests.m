@@ -26,13 +26,13 @@
 - (void)testThatObjectsAreSet
 {
     self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@1]];
-    XCTAssertNotNil([self.collection objectAtIndex:0 inSection:0], @"Objects was not set");
+    XCTAssertNotNil([self.collection objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], @"Objects was not set");
 }
 
 - (void)testThatObjectsAreSetWithACellIdentifier
 {
     self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@1] cellIdentifier:@"Cell"];
-    XCTAssertNotNil([self.collection objectAtIndex:0 inSection:0], @"Objects was not set");
+    XCTAssertNotNil([self.collection objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], @"Objects was not set");
 }
 
 - (void)testThatCellIdentiferIsSet
@@ -48,7 +48,7 @@
 {
     self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@2]];
 
-    XCTAssertNotNil([self.collection objectAtIndex:0 inSection:0], @"Objects were not returned in a section");
+    XCTAssertNotNil([self.collection objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], @"Objects were not returned in a section");
 }
 
 @end
