@@ -10,6 +10,12 @@
 
 
 /**
+ *  Constants
+ */
+NSString * const AEFDefaultCellIdentifier = @"AEFDefaultCellIdentifier";
+
+
+/**
  *  Private Class Extension
  */
 @interface AEFTableCollection ()
@@ -23,7 +29,12 @@
 @implementation AEFTableCollection
 
 
-#pragma mark - Mutation
+#pragma mark - Init
+
+- (instancetype)initWithObjects:(NSArray *)objects
+{
+    return [self initWithObjects:objects cellIdentifier:AEFDefaultCellIdentifier];
+}
 
 - (instancetype)initWithObjects:(NSArray *)objects
                  cellIdentifier:(NSString *)cellIdentifier

@@ -28,6 +28,9 @@
     [super tearDown];
 }
 
+
+#pragma mark - Init
+
 - (void)testThatObjectsIsSet
 {
     XCTAssertNotNil(self.collection.objects, @"Objects were not set");
@@ -38,10 +41,20 @@
     XCTAssertNotNil(self.collection.cellIdentifier, @"Cell identifier was not set");
 }
 
+- (void)testThatDefaultCellIdentifierIsSet
+{
+    self.collection = [[AEFTableCollection alloc] initWithObjects:@[@1]];
+    XCTAssertEqual(self.collection.cellIdentifier, AEFDefaultCellIdentifier, @"Default cell identifier was not set");
+}
+
+
+#pragma mark - NSCopying
+
 - (void)testThatCellIdentifierIsCopied
 {
     AEFTableCollection *collection = [self.collection copy];
     XCTAssertNotNil(collection.cellIdentifier, @"Cell identifier was not copied");
 }
+
 
 @end

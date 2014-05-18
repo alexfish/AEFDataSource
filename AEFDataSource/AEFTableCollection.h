@@ -8,6 +8,10 @@
 
 #import "AEFBaseCollection.h"
 
+
+FOUNDATION_EXPORT NSString * const AEFDefaultCellIdentifier;
+
+
 /**
  *  A collection model for holding objects to display within 
  *  a UITableView data source. Table collections hold a single
