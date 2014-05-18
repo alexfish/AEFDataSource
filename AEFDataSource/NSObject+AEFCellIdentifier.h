@@ -15,7 +15,7 @@
 @interface NSObject (AEFCellIdentifier)
 
 /**
- *  The cell identifier assocaited to the object
+ *  The cell identifier associated to the object
  */
 @property (nonatomic, strong) NSString *associatedCellIdentifer;
 
