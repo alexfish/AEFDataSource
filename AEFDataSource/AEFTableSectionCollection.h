@@ -21,9 +21,21 @@
  *
  *  @param indexPath An indexPath within the bounds of the collection
  *
- *  @return An object at the specified indexPath, if the indexPath is beyond the bounds
- *          of the collection than an exception is raised.
+ *  @return An object at the specified indexPath, if the indexPath is
+ *          beyond the bounds of the collection than an exception is raised.
  */
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  Return a cell identifier for the objects at a specified indexPath in
+ *  the collection
+ *
+ *  @param indexPath An indexPath within the bounds of the collection
+ *
+ *  @return A cell identifier associated to the obejcts at the
+ *          specified indexPath, if the indexPath is byoing the bounds
+ *          of the collection than an exception is raised.
+ */
+- (NSString *)cellIdentifierAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

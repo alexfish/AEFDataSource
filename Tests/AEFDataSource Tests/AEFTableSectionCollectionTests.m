@@ -11,6 +11,7 @@
 
 @interface AEFTableSectionCollectionTests : XCTestCase
 @property (nonatomic, strong) AEFTableSectionCollection *collection;
+@property (nonatomic, strong) NSIndexPath *defaultIndexPath;
 @end
 
 @implementation AEFTableSectionCollectionTests
@@ -18,6 +19,8 @@
 - (void)setUp
 {
     [super setUp];
+
+    self.defaultIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 }
 
 
@@ -26,13 +29,13 @@
 - (void)testThatObjectsAreSet
 {
     self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@1]];
-    XCTAssertNotNil([self.collection objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], @"Objects was not set");
+    XCTAssertNotNil([self.collection objectAtIndexPath:self.defaultIndexPath], @"Objects was not set");
 }
 
 - (void)testThatObjectsAreSetWithACellIdentifier
 {
     self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@1] cellIdentifier:@"Cell"];
-    XCTAssertNotNil([self.collection objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], @"Objects was not set");
+    XCTAssertNotNil([self.collection objectAtIndexPath:self.defaultIndexPath], @"Objects was not set");
 }
 
 - (void)testThatCellIdentiferIsSet
@@ -48,7 +51,15 @@
 {
     self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@2]];
 
-    XCTAssertNotNil([self.collection objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], @"Objects were not returned in a section");
+    XCTAssertNotNil([self.collection objectAtIndexPath:self.defaultIndexPath], @"Objects were not returned in a section");
+}
+
+- (void)testThatCellIdentifierIsReturnedForADefaultSection
+{
+    NSString *cellIdentifier = @"Hello";
+    self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@1] cellIdentifier:cellIdentifier];
+
+    XCTAssertEqual(cellIdentifier, [self.collection cellIdentifierAtIndexPath:self.defaultIndexPath], @"Wrong cell identifier returned");
 }
 
 @end

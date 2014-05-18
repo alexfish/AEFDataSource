@@ -8,11 +8,11 @@
 
 #import "AEFTableSectionCollection.h"
 
-// Frameworks
-#include <objc/runtime.h>
-
 // Class Extension
 #import "AEFBaseCollection_Private.h"
+
+// Categories
+#import "NSObject+AEFCellIdentifier.h"
 
 
 @implementation AEFTableSectionCollection
@@ -23,40 +23,49 @@
 
 - (instancetype)initWithObjects:(NSArray *)objects
 {
-    objects = @[objects];
-    return [super initWithObjects:objects];;
+    self = [super initWithObjects:@[objects]];
+    if (self)
+    {
+        [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [obj setAssociatedCellIdentifer:AEFDefaultCellIdentifier];
+        }];
+    }
+
+    return self;
 }
 
 - (instancetype)initWithObjects:(NSArray *)objects cellIdentifier:(NSString *)cellIdentifier
 {
-    objects = @[objects];
-    return [super initWithObjects:objects cellIdentifier:cellIdentifier];
+    self = [super initWithObjects:@[objects] cellIdentifier:cellIdentifier];
+    if (self)
+    {
+        [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [obj setAssociatedCellIdentifer:cellIdentifier];
+        }];
+    }
+
+    return self;
 }
 
 
 #pragma mark - Getters
 
-- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath
+- (NSString *)cellIdentifierAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifier = nil;
+
+    id object = [self objectAtIndexPath:indexPath];
+    if (object)
+    {
+        cellIdentifier = [object associatedCellIdentifer];
+    }
 
     return cellIdentifier;
 }
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath
 {
-    id object = nil;
-
-    if ([[self.objects objectAtIndex:indexPath.row] isKindOfClass:[NSArray class]])
-    {
-        object = [[self objectAtIndex:indexPath.row] objectAtIndex:indexPath.section];
-    }
-    else
-    {
-        object = [self objectAtIndex:indexPath.row];
-    }
-
-    return object;
+    return [[self objectAtIndex:indexPath.row] objectAtIndex:indexPath.section];
 }
 
 @end
