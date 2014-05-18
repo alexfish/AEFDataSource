@@ -12,6 +12,7 @@
 
 @interface AEFTableCollectionTests : XCTestCase
 @property (nonatomic, strong) AEFTableCollection *collection;
+@property (nonatomic, strong) NSString *defaultCellIdentifier;
 @end
 
 @implementation AEFTableCollectionTests
@@ -19,8 +20,9 @@
 - (void)setUp
 {
     [super setUp];
-    
-    self.collection = [[AEFTableCollection alloc] initWithObjects:@[@1] cellIdentifier:@"Hello"];
+
+    self.defaultCellIdentifier = @"Hello";
+    self.collection = [[AEFTableCollection alloc] initWithObjects:@[@1] cellIdentifier:self.defaultCellIdentifier];
 }
 
 - (void)tearDown
@@ -45,6 +47,14 @@
 {
     self.collection = [[AEFTableCollection alloc] initWithObjects:@[@1]];
     XCTAssertEqual(self.collection.cellIdentifier, AEFDefaultCellIdentifier, @"Default cell identifier was not set");
+}
+
+
+#pragma mark - Getters
+
+- (void)testThatCellIdentifierIsReturnedForAnIndex
+{
+    XCTAssertEqual(self.defaultCellIdentifier, [self.collection cellIdentifierAtIndex:0], @"Cell identiier was not returned");
 }
 
 

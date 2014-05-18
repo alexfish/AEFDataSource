@@ -8,6 +8,12 @@
 
 #import "AEFTableCollection.h"
 
+// Categories
+#import "NSObject+AEFCellIdentifier.h"
+
+// Class Extensions
+#import "AEFBaseCollection_Private.h"
+
 
 /**
  *  Constants
@@ -33,7 +39,14 @@ NSString * const AEFDefaultCellIdentifier = @"AEFDefaultCellIdentifier";
 
 - (instancetype)initWithObjects:(NSArray *)objects
 {
-    return [self initWithObjects:objects cellIdentifier:AEFDefaultCellIdentifier];
+    self = [super initWithObjects:objects];
+    if (self)
+    {
+        _cellIdentifier = AEFDefaultCellIdentifier;
+        [self AEF_associateCellIdentifier:self.cellIdentifier toObjects:self.objects];
+    }
+
+    return self;
 }
 
 - (instancetype)initWithObjects:(NSArray *)objects
@@ -43,9 +56,36 @@ NSString * const AEFDefaultCellIdentifier = @"AEFDefaultCellIdentifier";
     if (self)
     {
         _cellIdentifier = [cellIdentifier copy];
+        [self AEF_associateCellIdentifier:self.cellIdentifier toObjects:self.objects];
     }
     
     return self;
+}
+
+
+#pragma mark - Init (Private)
+
+- (void)AEF_associateCellIdentifier:(NSString *)cellIdentifier toObjects:(NSArray *)objects
+{
+    [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setAssociatedCellIdentifer:cellIdentifier];
+    }];
+}
+
+
+#pragma mark - Getters
+
+- (NSString *)cellIdentifierAtIndex:(NSUInteger)index
+{
+    NSString *cellIdentifier = nil;
+
+    id object = [self objectAtIndex:index];
+    if (object)
+    {
+        cellIdentifier = [object associatedCellIdentifer];
+    }
+
+    return cellIdentifier;
 }
 
 

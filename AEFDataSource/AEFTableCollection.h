@@ -14,10 +14,9 @@ FOUNDATION_EXPORT NSString * const AEFDefaultCellIdentifier;
 
 /**
  *  A collection model for holding objects to display within 
- *  a UITableView data source. Table collections hold a single
- *  cell identifier and therefore are designed for use with simple
- *  table data source implementations that have one section and a single
- *  cell identifier.
+ *  a UITableView data source. Table collections one dimensional
+ *  and therefore are designed for use with simple
+ *  table data source implementations that have one section
  */
 @interface AEFTableCollection : AEFBaseCollection
 
@@ -36,5 +35,17 @@ FOUNDATION_EXPORT NSString * const AEFDefaultCellIdentifier;
  */
 - (instancetype)initWithObjects:(NSArray *)objects
                  cellIdentifier:(NSString *)cellIdentifier;
+
+/**
+ *  Return a cell identifier for the objects at a specified index in
+ *  the collection
+ *
+ *  @param index An index within the bounds of the collection
+ *
+ *  @return A cell identifier associated to the objects at the
+ *          specified index, if the index is beyond the bounds
+ *          of the collection than an exception is raised.
+ */
+- (NSString *)cellIdentifierAtIndex:(NSUInteger)index;
 
 @end

@@ -18,33 +18,17 @@
 @implementation AEFTableSectionCollection
 
 
-
 #pragma mark - Init
 
 - (instancetype)initWithObjects:(NSArray *)objects
 {
-    self = [super initWithObjects:@[objects]];
-    if (self)
-    {
-        [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [obj setAssociatedCellIdentifer:AEFDefaultCellIdentifier];
-        }];
-    }
-
-    return self;
+    return [super initWithObjects:@[objects]];;
 }
 
-- (instancetype)initWithObjects:(NSArray *)objects cellIdentifier:(NSString *)cellIdentifier
+- (instancetype)initWithObjects:(NSArray *)objects
+                 cellIdentifier:(NSString *)cellIdentifier
 {
-    self = [super initWithObjects:@[objects] cellIdentifier:cellIdentifier];
-    if (self)
-    {
-        [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [obj setAssociatedCellIdentifer:cellIdentifier];
-        }];
-    }
-
-    return self;
+    return [super initWithObjects:@[objects] cellIdentifier:cellIdentifier];;
 }
 
 
