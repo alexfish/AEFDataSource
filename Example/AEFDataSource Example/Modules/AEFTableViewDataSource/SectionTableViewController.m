@@ -39,6 +39,8 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 
     AEFTableSectionCollection *collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@"Row", @"Row"] cellIdentifier:@"Cell"];
+    [collection addObjects:@[@"Row", @"Row", @"Row"] toSection:1 withCellIdentifier:@"Cell"];
+    [collection addObjects:@[@"Row", @"Row", @"Row"] toSection:2 withCellIdentifier:@"Cell"];
 
     self.dataSource = [[AEFTableViewDataSource alloc] initWithCollection:collection configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
         cell.textLabel.text = [NSString stringWithFormat:@"%@_%i", item, indexPath.row];
