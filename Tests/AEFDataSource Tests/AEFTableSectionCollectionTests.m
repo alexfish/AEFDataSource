@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "AEFTableSectionCollection.h"
+#import "NSObject+AEFCellIdentifier.h"
+
 
 @interface AEFTableSectionCollectionTests : XCTestCase
 @property (nonatomic, strong) AEFTableSectionCollection *collection;
@@ -74,6 +76,17 @@
     [self.collection addObjects:objects toSection:0 withCellIdentifier:cellIdentifier];
 
     XCTAssertEqual(self.collection[0][0], objects[0], @"Objects were not added to section");
+}
+
+- (void)testThatObjectsAreAssociatedWithACellIdentifier
+{
+    NSString *cellIdentifier = @"Hello";
+    self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[] cellIdentifier:cellIdentifier];
+
+    NSArray *objects = @[@100];
+    [self.collection addObjects:objects toSection:0 withCellIdentifier:cellIdentifier];
+
+    XCTAssertEqual(cellIdentifier, [self.collection[0][0] associatedCellIdentifer], @"Objects were not associated with a cell identifier");
 }
 
 @end
