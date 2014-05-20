@@ -80,7 +80,7 @@
          toSection:(NSUInteger)section
 withCellIdentifier:(NSString *)cellIdentifier
 {
-    [super AEF_associateCellIdentifier:cellIdentifier toObjects:objects];
+    [self AEF_associateCellIdentifier:cellIdentifier toObjects:objects];
 
     NSArray *sectionObjects = nil;
 
