@@ -98,7 +98,15 @@ withCellIdentifier:(NSString *)cellIdentifier
     sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
 
     NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
-    [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
+
+    if (section < mutableObjects.count)
+    {
+        [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
+    }
+    else
+    {
+        [mutableObjects addObject:sectionObjects];
+    }
 
     self.objects = [NSArray arrayWithArray:mutableObjects];
 }
@@ -116,6 +124,5 @@ withCellIdentifier:(NSString *)cellIdentifier
 
     self.objects = [NSArray arrayWithArray:mutableObjects];
 }
-
 
 @end
