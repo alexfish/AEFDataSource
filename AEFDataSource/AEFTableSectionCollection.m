@@ -56,7 +56,9 @@
 
 #pragma mark - Mutation
 
-- (void)addObjects:(NSArray *)objects toSection:(NSUInteger)section withCellIdentifier:(NSString *)cellIdentifier
+- (void)addObjects:(NSArray *)objects
+         toSection:(NSUInteger)section
+withCellIdentifier:(NSString *)cellIdentifier
 {
     [super AEF_associateCellIdentifier:cellIdentifier toObjects:objects];
 
@@ -73,6 +75,19 @@
 
     NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
     [mutableSectionObjects addObjectsFromArray:objects];
+    sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
+
+    NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
+    [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
+
+    self.objects = [NSArray arrayWithArray:mutableObjects];
+}
+
+- (void)removeObjects:(NSArray *)objects fromSection:(NSUInteger)section
+{
+    NSArray *sectionObjects = [self.objects objectAtIndex:0];
+    NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
+    [mutableSectionObjects removeObjectsInArray:objects];
     sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
 
     NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];

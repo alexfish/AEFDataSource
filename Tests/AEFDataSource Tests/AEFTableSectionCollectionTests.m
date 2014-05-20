@@ -89,4 +89,13 @@
     XCTAssertEqual(cellIdentifier, [self.collection[0][0] associatedCellIdentifer], @"Objects were not associated with a cell identifier");
 }
 
+- (void)testThatObjectsAreRemovedFromASection
+{
+    self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@0, @1] cellIdentifier:@"Test"];
+
+    [self.collection removeObjects:@[@0] fromSection:0];
+
+    XCTAssertEqual(self.collection[0][0], @1, @"Objects were not removed from section");
+}
+
 @end

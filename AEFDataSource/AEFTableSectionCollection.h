@@ -45,6 +45,17 @@
  *  @param section        The seciton of the collection to add objects to.
  *  @param cellIdentifier A cell idtentifier to associate to the objects
  */
-- (void)addObjects:(NSArray *)objects toSection:(NSUInteger)section withCellIdentifier:(NSString *)cellIdentifier;
+- (void)addObjects:(NSArray *)objects
+         toSection:(NSUInteger)section
+withCellIdentifier:(NSString *)cellIdentifier;
+
+/**
+ *  Remove objects from a section of the collection
+ *
+ *  @param objects The objects to remove from the collection's section
+ *  @param section The section to remove objects from, if the section is
+ *                 empty than an exception is raised.
+ */
+- (void)removeObjects:(NSArray *)objects fromSection:(NSUInteger)section;
 
 @end
