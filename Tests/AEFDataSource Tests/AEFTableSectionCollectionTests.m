@@ -68,12 +68,12 @@
 - (void)testThatObjectsAreAddedToSection
 {
     NSString *cellIdentifier = @"Hello";
-    self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@1] cellIdentifier:cellIdentifier];
+    self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[] cellIdentifier:cellIdentifier];
 
     NSArray *objects = @[@100];
     [self.collection addObjects:objects toSection:0 withCellIdentifier:cellIdentifier];
 
-    XCTAssertEqual(self.collection[0][1], objects[0], @"Objects were not added to section");
+    XCTAssertEqual(self.collection[0][0], objects[0], @"Objects were not added to section");
 }
 
 @end

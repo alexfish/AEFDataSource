@@ -60,19 +60,26 @@
 {
     [super AEF_associateCellIdentifier:cellIdentifier toObjects:objects];
 
-    NSArray *sectionObjects = [self.objects objectAtIndex:section];
+    NSArray *sectionObjects = nil;
 
-    if (sectionObjects)
+    if (section < self.objects.count)
     {
-        NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
-        [mutableSectionObjects addObjectsFromArray:objects];
-        NSArray *sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
-
-        NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
-        [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
-
-        self.objects = [NSArray arrayWithArray:mutableObjects];
+        sectionObjects = [self.objects objectAtIndex:section];
     }
+    else
+    {
+        sectionObjects = @[];
+    }
+
+    NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
+    [mutableSectionObjects addObjectsFromArray:objects];
+    sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
+
+    NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
+    [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
+
+    self.objects = [NSArray arrayWithArray:mutableObjects];
 }
+
 
 @end
