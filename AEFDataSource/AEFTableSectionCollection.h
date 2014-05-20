@@ -38,4 +38,14 @@
  */
 - (NSString *)cellIdentifierAtIndexPath:(NSIndexPath *)indexPath;
 
+/**
+ *  Add objects to a section associated to a cell identifier
+ *
+ *  @param objects        An array of objects to add to the specified section
+ *  @param section        The seciton of the collection to add objects to.
+ *                        If the section does not exist an exception is raised.
+ *  @param cellIdentifier A cell idtentifier to associate to the objects
+ */
+- (void)addObjects:(NSArray *)objects toSection:(NSUInteger)section withCellIdentifier:(NSString *)cellIdentifier;
+
 @end

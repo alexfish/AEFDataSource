@@ -32,6 +32,9 @@
          location = "group:AEFTableCollection.m">
       </FileRef>
       <FileRef
+         location = "group:AEFTableCollection_Private.h">
+      </FileRef>
+      <FileRef
          location = "group:AEFTableSectionCollection.h">
       </FileRef>
       <FileRef

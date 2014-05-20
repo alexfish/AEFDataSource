@@ -13,23 +13,13 @@
 
 // Class Extensions
 #import "AEFBaseCollection_Private.h"
+#import "AEFTableCollection_Private.h"
 
 
 /**
  *  Constants
  */
 NSString * const AEFDefaultCellIdentifier = @"AEFDefaultCellIdentifier";
-
-
-/**
- *  Private Class Extension
- */
-@interface AEFTableCollection ()
-/**
- *  Overwritten readonly properties
- */
-@property (nonatomic, copy, readwrite) NSString *cellIdentifier;
-@end
 
 
 @implementation AEFTableCollection

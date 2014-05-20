@@ -10,6 +10,7 @@
 
 // Class Extension
 #import "AEFBaseCollection_Private.h"
+#import "AEFTableCollection_Private.h"
 
 // Categories
 #import "NSObject+AEFCellIdentifier.h"
@@ -50,6 +51,28 @@
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath
 {
     return [[self objectAtIndex:indexPath.row] objectAtIndex:indexPath.section];
+}
+
+
+#pragma mark - Mutation
+
+- (void)addObjects:(NSArray *)objects toSection:(NSUInteger)section withCellIdentifier:(NSString *)cellIdentifier
+{
+    [super AEF_associateCellIdentifier:cellIdentifier toObjects:objects];
+
+    NSArray *sectionObjects = [self.objects objectAtIndex:section];
+
+    if (sectionObjects)
+    {
+        NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
+        [mutableSectionObjects addObjectsFromArray:objects];
+        NSArray *sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
+
+        NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
+        [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
+
+        self.objects = [NSArray arrayWithArray:mutableObjects];
+    }
 }
 
 @end

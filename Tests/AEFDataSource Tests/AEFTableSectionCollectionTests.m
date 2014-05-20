@@ -62,4 +62,18 @@
     XCTAssertEqual(cellIdentifier, [self.collection cellIdentifierAtIndexPath:self.defaultIndexPath], @"Wrong cell identifier returned");
 }
 
+
+#pragma mark - Mutation
+
+- (void)testThatObjectsAreAddedToSection
+{
+    NSString *cellIdentifier = @"Hello";
+    self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@1] cellIdentifier:cellIdentifier];
+
+    NSArray *objects = @[@100];
+    [self.collection addObjects:objects toSection:0 withCellIdentifier:cellIdentifier];
+
+    XCTAssertEqual(self.collection[0][1], objects[0], @"Objects were not added to section");
+}
+
 @end
