@@ -86,6 +86,7 @@ withCellIdentifier:(NSString *)cellIdentifier
 - (void)removeObjects:(NSArray *)objects fromSection:(NSUInteger)section
 {
     NSArray *sectionObjects = [self.objects objectAtIndex:0];
+
     NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
     [mutableSectionObjects removeObjectsInArray:objects];
     sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];

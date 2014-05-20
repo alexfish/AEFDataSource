@@ -10,6 +10,10 @@
 
 // Models
 #import "AEFTableCollection.h"
+#import "AEFTableSectionCollection.h"
+
+// Categories
+#import "NSObject+AEFCellIdentifier.h"
 
 
 /**
@@ -48,26 +52,49 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    NSInteger count = 0;
+
+    if ([self.collection isKindOfClass:[AEFTableCollection class]])
+    {
+        count = 1;
+    }
+    else if([self.collection isKindOfClass:[AEFTableSectionCollection class]])
+    {
+        count = self.collection.count;
+    }
+
+    return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.collection.count;
+    NSInteger count = 0;
+
+    if ([self.collection isKindOfClass:[AEFTableCollection class]])
+    {
+        count = self.collection.count;
+    }
+    else if([self.collection isKindOfClass:[AEFTableSectionCollection class]])
+    {
+        count = [self.collection[section] count];
+    }
+
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.collection.cellIdentifier
-                                                            forIndexPath:indexPath];
-    
-    id item = [self itemAtIndexPath:indexPath];
-    
+    id item                 = [self itemAtIndexPath:indexPath];
+    UITableViewCell *cell   = nil;
+
     if (item)
     {
+        cell = [tableView dequeueReusableCellWithIdentifier:[item associatedCellIdentifer]
+                                                                forIndexPath:indexPath];
+
         self.configureCellBlock(cell, item, indexPath);
     }
-    
+
     return cell;
 }
 
@@ -78,11 +105,24 @@
 {
     id item = nil;
 
-    if (indexPath.row < self.collection.count)
+    if ([self.collection isKindOfClass:[AEFTableCollection class]])
     {
-        item = self.collection[indexPath.row];
+        if (indexPath.row < self.collection.count)
+        {
+            item = self.collection[indexPath.row];
+        }
     }
-    
+    else if([self.collection isKindOfClass:[AEFTableSectionCollection class]])
+    {
+        if (indexPath.section < self.collection.count)
+        {
+            if (indexPath.row < [self.collection[indexPath.section] count])
+            {
+                item = self.collection[indexPath.section][indexPath.row];
+            }
+        }
+    }
+
     return item;
 }
 

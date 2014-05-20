@@ -9,6 +9,8 @@
 #import <XCTest/XCTest.h>
 #import "AEFTableViewDataSource.h"
 #import "AEFTableCollection.h"
+#import "AEFTableSectionCollection.h"
+
 
 @interface AEFTableViewDataSourceTests : XCTestCase
 @property (nonatomic, strong) AEFTableViewDataSource *dataSource;
@@ -32,6 +34,11 @@
 - (AEFTableCollection *)collection
 {
     return [[AEFTableCollection alloc] initWithObjects:@[@2]];
+}
+
+- (AEFTableSectionCollection *)sectionCollection
+{
+    return [[AEFTableSectionCollection alloc] initWithObjects:@[@2]];
 }
 
 
@@ -81,7 +88,7 @@
     
     __block BOOL testBOOL = NO;
     
-    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithCollection:self.collection configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
+    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithCollection:self.sectionCollection configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
         testBOOL = YES;
     }];
     
@@ -99,7 +106,7 @@
     
     __block BOOL testBOOL = NO;
     
-    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithCollection:self.collection configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
+    AEFTableViewDataSource *dataSource = [[AEFTableViewDataSource alloc] initWithCollection:self.sectionCollection configureCellBlock:^(id cell, id item, NSIndexPath *indexPath) {
         testBOOL = YES;
     }];
     
@@ -107,7 +114,7 @@
     
     [dataSource tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:10 inSection:20]];
     
-    XCTAssertFalse(testBOOL, @"Configure cell block was not called");
+    XCTAssertFalse(testBOOL, @"Configure cell block was called");
 }
 
 @end
