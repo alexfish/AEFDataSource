@@ -54,11 +54,11 @@
 {
     NSInteger count = 0;
 
-    if ([self.collection isKindOfClass:[AEFTableCollection class]])
+    if ([self.collection isMemberOfClass:[AEFTableCollection class]])
     {
         count = 1;
     }
-    else if([self.collection isKindOfClass:[AEFTableSectionCollection class]])
+    else if([self.collection isMemberOfClass:[AEFTableSectionCollection class]])
     {
         count = self.collection.count;
     }
@@ -70,11 +70,11 @@
 {
     NSInteger count = 0;
 
-    if ([self.collection isKindOfClass:[AEFTableCollection class]])
+    if ([self.collection isMemberOfClass:[AEFTableCollection class]])
     {
         count = self.collection.count;
     }
-    else if([self.collection isKindOfClass:[AEFTableSectionCollection class]])
+    else if([self.collection isMemberOfClass:[AEFTableSectionCollection class]])
     {
         count = [self.collection[section] count];
     }
@@ -105,14 +105,14 @@
 {
     id item = nil;
 
-    if ([self.collection isKindOfClass:[AEFTableCollection class]])
+    if ([self.collection isMemberOfClass:[AEFTableCollection class]])
     {
         if (indexPath.row < self.collection.count)
         {
             item = self.collection[indexPath.row];
         }
     }
-    else if([self.collection isKindOfClass:[AEFTableSectionCollection class]])
+    else if([self.collection isMemberOfClass:[AEFTableSectionCollection class]])
     {
         if (indexPath.section < self.collection.count)
         {
