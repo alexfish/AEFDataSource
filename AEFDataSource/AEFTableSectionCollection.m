@@ -33,6 +33,26 @@
 }
 
 
+#pragma mark - Cell Identifier (Private)
+
+- (void)AEF_associateCellIdentifier:(NSString *)cellIdentifier toObjects:(NSArray *)objects
+{
+    [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[NSArray class]])
+        {
+            NSArray *sectionObjects = (NSArray *)obj;
+            [sectionObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [obj setAssociatedCellIdentifer:cellIdentifier];
+            }];
+        }
+        else
+        {
+            [obj setAssociatedCellIdentifer:cellIdentifier];
+        }
+    }];
+}
+
+
 #pragma mark - Getters
 
 - (NSString *)cellIdentifierAtIndexPath:(NSIndexPath *)indexPath

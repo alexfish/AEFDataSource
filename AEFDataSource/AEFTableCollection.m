@@ -53,7 +53,7 @@ NSString * const AEFDefaultCellIdentifier = @"AEFDefaultCellIdentifier";
 }
 
 
-#pragma mark - Init (Private)
+#pragma mark - Cell Identifier (Private)
 
 - (void)AEF_associateCellIdentifier:(NSString *)cellIdentifier toObjects:(NSArray *)objects
 {
