@@ -99,7 +99,7 @@
 
 - (void)removeObjects:(NSArray *)objects fromSection:(NSUInteger)section
 {
-    if (section >= objects.count) return;
+    if (section >= self.objects.count) return;
 
     NSArray *sectionObjects         = [self.objects objectAtIndex:section];
     NSArray *updatedSectionObjects  = [self AEF_arrayByRemovingObjects:objects fromArray:sectionObjects];
