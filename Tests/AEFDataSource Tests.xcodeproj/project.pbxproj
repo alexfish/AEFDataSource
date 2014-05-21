@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0687CFAE1923EAE00018CDDC /* AEFTableCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0687CFAD1923EAE00018CDDC /* AEFTableCollectionTests.m */; };
 		06CFCBB5191FBB22009A34CA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CFCBB4191FBB22009A34CA /* XCTest.framework */; };
 		06CFCBB7191FBB22009A34CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CFCBB6191FBB22009A34CA /* Foundation.framework */; };
 		06CFCBB9191FBB22009A34CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CFCBB8191FBB22009A34CA /* UIKit.framework */; };
 		06CFCBBF191FBB22009A34CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06CFCBBD191FBB22009A34CA /* InfoPlist.strings */; };
 		06CFCBC7191FC253009A34CA /* AEFTableViewDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFCBC6191FC253009A34CA /* AEFTableViewDataSourceTests.m */; };
+		06D051121922C4AE0098A28B /* AEFBaseCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D051111922C4AE0098A28B /* AEFBaseCollectionTests.m */; };
+		06E82BC519291B3A002EC013 /* AEFTableSectionCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E82BC419291B3A002EC013 /* AEFTableSectionCollectionTests.m */; };
 		D87FBEB97AB44A1CB972B697 /* libPods-AEFDataSource Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDFA57A5F89462EA27CBB0C /* libPods-AEFDataSource Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0687CFAD1923EAE00018CDDC /* AEFTableCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFTableCollectionTests.m; sourceTree = "<group>"; };
 		06CFCBB1191FBB22009A34CA /* AEFDataSource Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AEFDataSource Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CFCBB4191FBB22009A34CA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		06CFCBB6191FBB22009A34CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -24,6 +28,8 @@
 		06CFCBBE191FBB22009A34CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		06CFCBC2191FBB22009A34CA /* AEFDataSource Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEFDataSource Tests-Prefix.pch"; sourceTree = "<group>"; };
 		06CFCBC6191FC253009A34CA /* AEFTableViewDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFTableViewDataSourceTests.m; sourceTree = "<group>"; };
+		06D051111922C4AE0098A28B /* AEFBaseCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFBaseCollectionTests.m; sourceTree = "<group>"; };
+		06E82BC419291B3A002EC013 /* AEFTableSectionCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFTableSectionCollectionTests.m; sourceTree = "<group>"; };
 		8F1FD3AAAE374F69BAAF18E1 /* Pods-AEFDataSource Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEFDataSource Tests.xcconfig"; path = "../Pods/Pods-AEFDataSource Tests.xcconfig"; sourceTree = "<group>"; };
 		ECDFA57A5F89462EA27CBB0C /* libPods-AEFDataSource Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AEFDataSource Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +83,9 @@
 			children = (
 				06CFCBBB191FBB22009A34CA /* Supporting Files */,
 				06CFCBC6191FC253009A34CA /* AEFTableViewDataSourceTests.m */,
+				06D051111922C4AE0098A28B /* AEFBaseCollectionTests.m */,
+				0687CFAD1923EAE00018CDDC /* AEFTableCollectionTests.m */,
+				06E82BC419291B3A002EC013 /* AEFTableSectionCollectionTests.m */,
 			);
 			path = "AEFDataSource Tests";
 			sourceTree = "<group>";
@@ -187,7 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0687CFAE1923EAE00018CDDC /* AEFTableCollectionTests.m in Sources */,
 				06CFCBC7191FC253009A34CA /* AEFTableViewDataSourceTests.m in Sources */,
+				06E82BC519291B3A002EC013 /* AEFTableSectionCollectionTests.m in Sources */,
+				06D051121922C4AE0098A28B /* AEFBaseCollectionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.name             = "AEFDataSource"
   s.version          = "0.3.0"
   s.summary          = "Reusable data source models for your iOS application"
-  s.homepage         = "http://github.com/AEFDataSource"
+  s.homepage         = "http://github.com/alexfish/AEFDataSource"
   s.license          = 'MIT'
   s.author           = { "Alex Fish" => "alex@alexefish.com" }
   s.source           = { :git => "https://github.com/alexfish/AEFDataSource.git", :tag => s.version.to_s }
@@ -16,6 +16,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'AEFDataSource'
-  s.resources = 'Assets/*.png'
   s.platform = :ios
 end
