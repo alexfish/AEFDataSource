@@ -103,10 +103,11 @@
 - (void)testThatObjectsAreRemovedFromASection
 {
     self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@0, @1] cellIdentifier:@"Test"];
+    [self.collection addObjects:@[@100] toSection:1 withCellIdentifier:@"Cell"];
 
-    [self.collection removeObjects:@[@0] fromSection:0];
+    [self.collection removeObjects:@[@100] fromSection:1];
 
-    XCTAssertEqual(self.collection[0][0], @1, @"Objects were not removed from section");
+    XCTAssertThrows(self.collection[1][0], @"Section was not removed");
 }
 
 - (void)testThatObjectsAreNotRemovedFromAnInvalidSection
