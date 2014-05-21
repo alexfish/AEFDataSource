@@ -10,6 +10,42 @@
       <FileRef
          location = "group:AEFTableViewDataSource.m">
       </FileRef>
+      <FileRef
+         location = "group:AEFBaseModel.h">
+      </FileRef>
+      <FileRef
+         location = "group:AEFBaseModel.m">
+      </FileRef>
+      <FileRef
+         location = "group:AEFBaseCollection.h">
+      </FileRef>
+      <FileRef
+         location = "group:AEFBaseCollection.m">
+      </FileRef>
+      <FileRef
+         location = "group:AEFBaseCollection_Private.h">
+      </FileRef>
+      <FileRef
+         location = "group:AEFTableCollection.h">
+      </FileRef>
+      <FileRef
+         location = "group:AEFTableCollection.m">
+      </FileRef>
+      <FileRef
+         location = "group:AEFTableCollection_Private.h">
+      </FileRef>
+      <FileRef
+         location = "group:AEFTableSectionCollection.h">
+      </FileRef>
+      <FileRef
+         location = "group:AEFTableSectionCollection.m">
+      </FileRef>
+      <FileRef
+         location = "group:NSObject+AEFCellIdentifier.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSObject+AEFCellIdentifier.m">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Example/AEFDataSource Example.xcodeproj">

@@ -11,6 +11,9 @@
 // DataSource
 #import "AEFTableViewDataSource.h"
 
+// Models
+#import "AEFTableSectionCollection.h"
+
 
 @interface SectionTableViewController ()
 @property (nonatomic, strong) AEFTableViewDataSource *dataSource;
@@ -34,9 +37,14 @@
 - (void)setupTableView
 {
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    
-    NSArray *items = @[@[@"Row"], @[@"Row"], @[@"Row"], @[@"Row"], @[@"Row"], @[@"Row"], @[@"Row"]];
-    self.dataSource = [[AEFTableViewDataSource alloc] initWithItems:items cellIdentifier:@"Cell" configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
+
+    AEFTableSectionCollection *collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@"Row", @"Row"] cellIdentifier:@"Cell"];
+    [collection addObjects:@[@"Row", @"Row", @"Row"] toSection:1 withCellIdentifier:@"Cell"];
+    [collection addObjects:@[@"Row", @"Row", @"Row"] toSection:2 withCellIdentifier:@"Cell"];
+    [collection addObjects:@[@"Row", @"Removed", @"Row"] toSection:3 withCellIdentifier:@"Cell"];
+    [collection removeObjects:@[@"Removed"] fromSection:3];
+
+    self.dataSource = [[AEFTableViewDataSource alloc] initWithCollection:collection configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
         cell.textLabel.text = [NSString stringWithFormat:@"%@_%i", item, indexPath.row];
     }];
     
