@@ -76,12 +76,60 @@
 
 #pragma mark - Mutation
 
-- (void)addObjects:(NSArray *)objects
-         toSection:(NSUInteger)section
-withCellIdentifier:(NSString *)cellIdentifier
+- (void)addObjects:(NSArray *)objects toSection:(NSUInteger)section withCellIdentifier:(NSString *)cellIdentifier
 {
     [self AEF_associateCellIdentifier:cellIdentifier toObjects:objects];
 
+    NSArray *sectionObjects         = [self AEF_objectsAtSection:section];
+    NSArray *updatedSectionObjects  = [self AEF_arrayByAddingObjects:objects toArray:sectionObjects];
+
+    NSMutableArray *mutableObjects  = [NSMutableArray arrayWithArray:self.objects];
+
+    if (section < mutableObjects.count)
+    {
+        [mutableObjects replaceObjectAtIndex:section withObject:updatedSectionObjects];
+    }
+    else
+    {
+        [mutableObjects addObject:updatedSectionObjects];
+    }
+
+    self.objects = [NSArray arrayWithArray:mutableObjects];
+}
+
+- (void)removeObjects:(NSArray *)objects fromSection:(NSUInteger)section
+{
+    if (section >= objects.count) return;
+
+    NSArray *sectionObjects         = [self.objects objectAtIndex:section];
+    NSArray *updatedSectionObjects  = [self AEF_arrayByRemovingObjects:objects fromArray:sectionObjects];
+
+    NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
+    [mutableObjects replaceObjectAtIndex:section withObject:updatedSectionObjects];
+
+    self.objects = [NSArray arrayWithArray:mutableObjects];
+}
+
+
+#pragma mark - Mutation (Private)
+
+- (NSArray *)AEF_arrayByRemovingObjects:(NSArray *)objects fromArray:(NSArray *)array
+{
+    NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:array];
+    [mutableObjects removeObjectsInArray:objects];
+    return [NSArray arrayWithArray:mutableObjects];
+}
+
+- (NSArray *)AEF_arrayByAddingObjects:(NSArray *)objects toArray:(NSArray *)array
+{
+    NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:array];
+    [mutableObjects addObjectsFromArray:objects];
+
+    return [NSArray arrayWithArray:mutableObjects];
+}
+
+- (NSArray *)AEF_objectsAtSection:(NSUInteger)section
+{
     NSArray *sectionObjects = nil;
 
     if (section < self.objects.count)
@@ -93,39 +141,7 @@ withCellIdentifier:(NSString *)cellIdentifier
         sectionObjects = @[];
     }
 
-    NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
-    [mutableSectionObjects addObjectsFromArray:objects];
-    sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
-
-    NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
-
-    if (section < mutableObjects.count)
-    {
-        [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
-    }
-    else
-    {
-        [mutableObjects addObject:sectionObjects];
-    }
-
-    self.objects = [NSArray arrayWithArray:mutableObjects];
-}
-
-- (void)removeObjects:(NSArray *)objects fromSection:(NSUInteger)section
-{
-    if (section < objects.count)
-    {
-        NSArray *sectionObjects = [self.objects objectAtIndex:section];
-
-        NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
-        [mutableSectionObjects removeObjectsInArray:objects];
-        sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
-
-        NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
-        [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
-
-        self.objects = [NSArray arrayWithArray:mutableObjects];
-    }
+    return sectionObjects;
 }
 
 @end

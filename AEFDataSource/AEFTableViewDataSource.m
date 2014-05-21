@@ -89,8 +89,9 @@
 
     if (item)
     {
-        cell = [tableView dequeueReusableCellWithIdentifier:[item associatedCellIdentifer]
-                                                                forIndexPath:indexPath];
+        NSString *cellIdentifier = [item associatedCellIdentifer];
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
+                                               forIndexPath:indexPath];
 
         self.configureCellBlock(cell, item, indexPath);
     }
