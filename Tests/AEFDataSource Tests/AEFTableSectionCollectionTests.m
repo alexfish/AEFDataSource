@@ -109,4 +109,11 @@
     XCTAssertEqual(self.collection[0][0], @1, @"Objects were not removed from section");
 }
 
+- (void)testThatObjectsAreNotRemovedFromAnInvalidSection
+{
+    self.collection = [[AEFTableSectionCollection alloc] initWithObjects:@[@0, @1] cellIdentifier:@"Test"];
+
+    XCTAssertNoThrow([self.collection removeObjects:@[@1] fromSection:10], @"An exception was thrown");
+}
+
 @end

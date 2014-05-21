@@ -113,16 +113,19 @@ withCellIdentifier:(NSString *)cellIdentifier
 
 - (void)removeObjects:(NSArray *)objects fromSection:(NSUInteger)section
 {
-    NSArray *sectionObjects = [self.objects objectAtIndex:0];
+    if (section < objects.count)
+    {
+        NSArray *sectionObjects = [self.objects objectAtIndex:section];
 
-    NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
-    [mutableSectionObjects removeObjectsInArray:objects];
-    sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
+        NSMutableArray *mutableSectionObjects = [NSMutableArray arrayWithArray:sectionObjects];
+        [mutableSectionObjects removeObjectsInArray:objects];
+        sectionObjects = [NSArray arrayWithArray:mutableSectionObjects];
 
-    NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
-    [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
+        NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:self.objects];
+        [mutableObjects replaceObjectAtIndex:section withObject:sectionObjects];
 
-    self.objects = [NSArray arrayWithArray:mutableObjects];
+        self.objects = [NSArray arrayWithArray:mutableObjects];
+    }
 }
 
 @end
