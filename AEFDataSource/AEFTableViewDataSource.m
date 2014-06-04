@@ -35,7 +35,7 @@
 #pragma mark - Init
 
 - (id)initWithCollection:(AEFTableCollection *)collection
-      configureCellBlock:(AEFTableViewCellConfigureBlock)configureCellBlock
+      configureCellBlock:(void(^)(UITableViewCell *cell, id item, NSIndexPath *indexPath))configureCellBlock
 {
     self = [super init];
     if (self)

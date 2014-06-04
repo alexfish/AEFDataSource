@@ -21,7 +21,7 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithObjects:(NSArray *)objects
+- (id)initWithObjects:(NSArray *)objects
 {
     return [super initWithObjects:@[objects]];;
 }

@@ -53,6 +53,6 @@ typedef void (^AEFTableViewCellConfigureBlock)(UITableViewCell *cell, id item, N
  *  @return A new table view data source instance with a collection and configure block
  */
 - (id)initWithCollection:(AEFTableCollection *)collection
-      configureCellBlock:(AEFTableViewCellConfigureBlock)configureCellBlock;
+      configureCellBlock:(void(^)(UITableViewCell *cell, id item, NSIndexPath *indexPath))configureCellBlock;
 
 @end

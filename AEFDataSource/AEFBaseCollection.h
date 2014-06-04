@@ -21,7 +21,7 @@
  *
  *  @return A collection instance containing objects
  */
-- (instancetype)initWithObjects:(NSArray *)objects;
+- (id)initWithObjects:(NSArray *)objects;
 
 /**
  *  Append an object to the end of the collection

@@ -27,7 +27,7 @@ NSString * const AEFDefaultCellIdentifier = @"AEFDefaultCellIdentifier";
 
 #pragma mark - Init
 
-- (instancetype)initWithObjects:(NSArray *)objects
+- (id)initWithObjects:(NSArray *)objects
 {
     self = [super initWithObjects:objects];
     if (self)

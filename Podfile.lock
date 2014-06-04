@@ -1,17 +1,17 @@
 PODS:
-  - AEFDataSource (0.3.0)
+  - AEFDataSource (0.4.0)
   - OCMock (2.1.1)
 
 DEPENDENCIES:
-  - AEFDataSource (from `AEFDataSource.podspec`)
+  - AEFDataSource (from `./AEFDataSource.podspec`)
   - OCMock (~> 2.1.1)
 
 EXTERNAL SOURCES:
   AEFDataSource:
-    :path: AEFDataSource.podspec
+    :path: ./AEFDataSource.podspec
 
 SPEC CHECKSUMS:
-  AEFDataSource: d36320ad02115e9728a31800d53ce22118cc141b
+  AEFDataSource: 7ee67cee21f148ceb094178ed2856b028be5a13b
   OCMock: 363db8429164eaa219ea96a51f06e830ef3e7393
 
 COCOAPODS: 0.33.1
